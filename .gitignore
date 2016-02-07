@@ -1,0 +1,16 @@
+**/.DS_Store
+**/Thumbs.db
+**/*~
+*~
+.idea
+/dist
+spot.sublime-project
+spot.sublime-workspace
+/logs
+/target
+/project/target
+/project/project/target
+/conf/credentials.conf
+/history
+/tmp
+

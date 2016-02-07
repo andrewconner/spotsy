@@ -1,0 +1,45 @@
+@(search: Option[String])
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Price graph</title>
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+    <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="//vega.github.io/vega/vega.js" charset="utf-8"></script>
+    <script src="//vega.github.io/vega-lite/vega-lite.js" charset="utf-8"></script>
+    <script src="//vega.github.io/vega-editor/vendor/vega-embed.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="vis"></div>
+    <script>
+      var vlSpec = {
+        "description": "Stock prices of 5 Tech Companies Over Time.",
+        "data": {"url": "/api/history/csv?search=@search", "formatType":"csv"},
+        "mark": "line",
+        "encoding": {
+          "x": {"field": "date", "type": "temporal"},
+          "y": {"field": "price", "type": "linear"},
+          "color": {"field": "name", "type": "nominal"}
+        },
+        "config": {
+          "mark": {"interpolate": "step-after"},
+          "cell": {
+            "width": 400, "height": 400
+          }
+        }
+      };
+      var embedSpec = {
+        mode: "vega-lite",
+        spec: vlSpec
+      };
+      vg.embed("#vis", embedSpec, function(error, result) {
+        // Callback receiving the View instance and parsed Vega spec
+        // result.view is the View, which resides under the '#vis' element
+      });
+    </script>
+
+  </body>
+</html>
