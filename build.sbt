@@ -14,14 +14,14 @@ libraryDependencies ++= Seq(
   "com.typesafe.slick" %% "slick" % "3.1.1",
   //"com.zaxxer" % "HikariCP" % "2.4.1",
   "com.typesafe.slick" % "slick-hikaricp_2.11" % "3.1.1",
-  "com.typesafe.play" %% "play-slick" % "2.0.0",
+  "com.typesafe.play" %% "play-slick" % "2.0.2",
   "com.h2database" % "h2" % "1.4.191",
   "com.softwaremill.macwire" %% "macros" % "2.2.2" % "provided",
   "com.softwaremill.macwire" %% "util" % "2.2.2",
   "com.softwaremill.macwire" %% "proxy" % "2.2.2",
   "org.typelevel" %% "cats" % "0.4.1",
-  "com.amazonaws" % "aws-java-sdk" % "1.10.65",
-  "org.scalaz" %% "scalaz-concurrent" % "7.2.1",
+  "com.amazonaws" % "aws-java-sdk" % "1.10.74",
+  "org.scalaz" %% "scalaz-concurrent" % "7.2.2",
   "org.feijoas" %% "mango" % "0.12"
 )
 
